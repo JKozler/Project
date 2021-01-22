@@ -51,6 +51,15 @@ final class ApiPresenter extends Nette\Application\UI\Presenter
         $this->sendResponse(new JsonResponse($data));
     }
 
+    public function actionGetEmployee($id) {
+        // Získá cestu k modelovému adresáři
+        $user = $this->database->query('SELECT * FROM zamestnanci WHERE id = ?', $id)->fetch();
+        $funkce = $this->database->query('SELECT * FROM funkce WHERE user_Id=?', $id)->fetchAll();
+
+        // Vrátí výsledek
+        $this->sendResponse(new JsonResponse(['zamestnanec' => $user, 'funkce' => $funkce]));
+    }
+
     public function actionDeleteEmployee($id) {
         // Získá cestu k modelovému adresáři
         $data = $this->database->query('DELETE FROM zamestnanci WHERE id = ?', $id);
