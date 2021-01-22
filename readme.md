@@ -1,46 +1,32 @@
-Nette Web Project
-=================
+# Projekt - správa zaměstnanců
+-----
+## Jak se s ním pracuje?
+- Vypracováno v Nette
+- Vyžaduje min. PHP 7.1
+- Umí ukazovat data jak v uživatelském rozhraní, tak i v JSON formátu
+- V uživatelském rozhraní můžete vidět tabulku, do které můžete také vkládat hodnoty (vkládat zaměstnance)
 
-This is a simple, skeleton application using the [Nette](https://nette.org). This is meant to
-be used as a starting point for your new projects.
+----
+## JSON formát
+Pro získání JSON formátu stačí zadat do URL adresy například toto ->
+ * localhost/dashboard/Project/api/get-employees-project-manager (vrátí všechny project managery)
+ * localhost/dashboard/Project/api/get-employees-programmer (vrátí všechny programátory)
+ * localhost/dashboard/Project/api/get-employees-not-waste-manager (vrátí všechny, kteří nejsou waste manageři)
+ * localhost/dashboard/Project/api/get-employees-not-manager (vrátí všechny, kteří nejsou manageři)
 
-[Nette](https://nette.org) is a popular tool for PHP web development.
-It is designed to be the most usable and friendliest as possible. It focuses
-on security and performance and is definitely one of the safest PHP frameworks.
+Tedy můžeme si všimnout závislosti na tom, že zadání ../api/get-employees....... získáme co chceme.
+Také máme druhou možnost, a to, když **NECHCEME** danou funkci, tak ../api/get-employees-not......
 
-If you like Nette, **[please make a donation now](https://nette.org/donate)**. Thank you!
+Zadáním pouze ../api/get-employees získáme všechny zaměstnance bez rozdílů.
 
+Zadáním ../api/delete-employee/{id} vzmažete daného zaměstnance
 
-Requirements
-------------
+----
+## Uživatelské rozhraní
+V UI máme možnost vidět v tabulce naše zaměstnance a také máme možnost tyto zaměstnance přidávat.
+Na UI se můžeme dále odkazovat na jednotlivé zmíněné funkce přes buttony - vše je zvýrazněné.
 
-- Web Project for Nette 3.1 requires PHP 7.2
-
-
-Installation
-------------
-
-The best way to install Web Project is using Composer. If you don't have Composer yet,
-download it following [the instructions](https://doc.nette.org/composer). Then use command:
-
-	composer create-project nette/web-project path/to/install
-	cd path/to/install
-
-
-Make directories `temp/` and `log/` writable.
-
-
-Web Server Setup
-----------------
-
-The simplest way to get started is to start the built-in PHP server in the root directory of your project:
-
-	php -S localhost:8000 -t www
-
-Then visit `http://localhost:8000` in your browser to see the welcome page.
-
-For Apache or Nginx, setup a virtual host to point to the `www/` directory of the project and you
-should be ready to go.
-
-**It is CRITICAL that whole `app/`, `config/`, `log/` and `temp/` directories are not accessible directly
-via a web browser. See [security warning](https://nette.org/security-warning).**
+----
+## Databáze
+Databáze se skládá ze dvou tabulek, jedna je Funkce a druhá je Zaměstnanci. V tomto Git repositáři je najdete hned na úvodní stránce jméno "project.sql"
+Záznam do tabulky Funkce se vytvoří hned při vytváženi Zamšstnance - vytvoří se nám reference na něj.
