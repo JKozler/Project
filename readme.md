@@ -32,3 +32,7 @@ Na UI se můžeme dále odkazovat na jednotlivé zmíněné funkce přes buttony
 ## Databáze
 Databáze se skládá ze dvou tabulek, jedna je Funkce a druhá je Zaměstnanci. V tomto Git repositáři je najdete hned na úvodní stránce jméno "project.sql"
 Záznam do tabulky Funkce se vytvoří hned při vytváženi Zamšstnance - vytvoří se nám reference na něj.
+
+----
+## Konfigurace
+Stači pouze nahrát na localhost + změnit konfuguraci k připojení k databázi, cesta je -> config/local.neon -> v oddělení "database" je třeba změnit DNS, user a password.
