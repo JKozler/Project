@@ -19,7 +19,9 @@ Také máme druhou možnost, a to, když **NECHCEME** danou funkci, tak ../api/g
 
 Zadáním pouze ../api/get-employees získáme všechny zaměstnance bez rozdílů.
 
-Zadáním ../api/delete-employee/{id} vzmažete daného zaměstnance
+Zadáním ../api/delete-employee/{id} vymažete daného zaměstnance.
+
+Zadáním ../api/get-employee/{id} získám veškeré informace o daném zaměstnanci.
 
 ----
 ## Uživatelské rozhraní
