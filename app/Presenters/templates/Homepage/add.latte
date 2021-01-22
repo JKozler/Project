@@ -1,0 +1,49 @@
+{block content}
+ <div class="jumbotron text-center">
+  <h2>Přidat zaměstnance</h2>
+</div>
+<div class="container card-body">
+    {form addForm}
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label for="name"><b>Křestní jméno</b></label>
+                {input firstName}
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <label for="smallContent"><b>Přijmení</b></label>
+            {input lastName}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <label for="bigContent"><b>Manager?</b></label>
+            {input manager}
+        </div>
+        <div class="col-sm-3">
+            <label for="bigContent"><b>Programátor?</b></label>
+            {input programmer}
+        </div>
+        <div class="col-sm-3">
+            <label for="bigContent"><b>Projektový manager?</b></label>
+            {input projectManager}
+        </div>
+        <div class="col-sm-3">
+            <label for="bigContent"><b>Waste manager?</b></label>
+            {input wasteManager}
+        </div>
+    </div>
+    <hr />
+    <br />
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="d-flex flex-row-reverse">
+                {input send}
+                <p class="text-white">|</p>
+                <a n:href="Homepage:default" class="btn btn-primary">Zpět</a>
+            </div>
+        </div>
+    </div>
+    {/form}
+</div>
