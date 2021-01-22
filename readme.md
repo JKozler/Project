@@ -35,4 +35,4 @@ Záznam do tabulky Funkce se vytvoří hned při vytváženi Zamšstnance - vytv
 
 ----
 ## Konfigurace
-Stači pouze nahrát na localhost + změnit konfuguraci k připojení k databázi, cesta je -> config/local.neon -> v oddělení "database" je třeba změnit DNS, user a password.
+Stačí pouze nahrát na localhost + změnit konfuguraci k připojení k databázi, cesta je -> config/local.neon -> v oddělení "database" je třeba změnit DNS, user a password.
